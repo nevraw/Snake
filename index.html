@@ -68,7 +68,7 @@
 		function applyOptions() {
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
-			if (opts && opts.invert) {
+			if (opts && opts.hour_12) {
 				$form.find('[name="hour_12"]').prop('checked', true);
 			}
 		}
