@@ -17,39 +17,27 @@
 	================================================== -->
 <div class="container">
 	<header>
-		<h1>Configure Ripples</h1>
+		<h1>Configure Snake</h1>
 	</header>
 		
 	<div id="info" class="bg-info" style="padding:0.75em">
-			<p>Default is black background with white ripples.</p>
-		<p>Tick boxes to select white background with black ripples and whether background ripples should be displayed.
+			<p>Only configuration option, currently, is selection 12-hour mode. Default is 24-hour mode.
 			</p>
                 <p></p>
 		</div>
 	
 	<form id="config" role="form" class="input-lg">
 		<fieldset>
-			<legend>Colors:</legend>
+			<legend>Change time display mode:</legend>
 			<div class="checkbox">
 			<label>
-				<input type="checkbox" name="invert" value="on">
-						White background
+				<input type="checkbox" name="hour-12" value="on">
+						12-hour mode
 			</label>
 		</div>
   		</fieldset>
                 <p> </p>     
 	
-		<fieldset>
-			<legend>Hide background:</legend>
-			<div class="checkbox">
-			<label>
-				<input type="checkbox" name="background" value="on">
-						Remove background ripples 
-			</label>
-			</div>
-		</fieldset>
-                <p> </p>     
-
 	<fieldset>
 		<a href="pebblejs://close" class="btn btn-lg btn-default" role="button">Cancel</a>
 			<button type="button" class="btn btn-lg btn-primary" id="b-submit">Save</button>
@@ -82,10 +70,7 @@
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.invert) {
-				$form.find('[name="invert"]').prop('checked', true);
-			}
-			if (opts && opts.background) {
-				$form.find('[name="background"]').prop('checked', true);
+				$form.find('[name="hour-12"]').prop('checked', true);
 			}
 		}
 
