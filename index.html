@@ -4,7 +4,7 @@
   ================================================== -->
 <meta charset="utf-8">
 <title>Configure Ripples</title>
-<meta name="description" content="configuration page for Ripples, a Pebble watchface">
+<meta name="description" content="Configuration page for Snake, a Pebble watchface">
 <meta name="author" content="Nev Rawlins">
 <!-- Mobile Specific Metas
   ================================================== -->
@@ -21,7 +21,7 @@
 	</header>
 		
 	<div id="info" class="bg-info" style="padding:0.75em">
-			<p>Only configuration option, currently, is selection 12-hour mode. Default is 24-hour mode.
+			<p>Only configuration option, currently, is selection of 12-hour mode. Default is 24-hour mode.
 			</p>
                 <p></p>
 		</div>
@@ -60,7 +60,7 @@
 			});
 
 			var options = {
-				invert:	params.hour_12 === 'on'
+				hour_12:	params.hour_12 === 'on'
 			}
 			return options;
 		}
