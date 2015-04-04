@@ -31,7 +31,7 @@
 			<legend>Change time display mode:</legend>
 			<div class="checkbox">
 			<label>
-				<input type="checkbox" name="hour-12" value="on">
+				<input type="checkbox" name="hour_12" value="on">
 						12-hour mode
 			</label>
 		</div>
@@ -60,8 +60,7 @@
 			});
 
 			var options = {
-				invert:	params.invert === 'on',
-				background:	params.background === 'on'
+				invert:	params.hour_12 === 'on'
 			}
 			return options;
 		}
@@ -70,7 +69,7 @@
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.invert) {
-				$form.find('[name="hour-12"]').prop('checked', true);
+				$form.find('[name="hour_12"]').prop('checked', true);
 			}
 		}
 
