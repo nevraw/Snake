@@ -1,0 +1,74 @@
+<body>
+<div class="container">
+<h2>Configure Snake</h2>
+<form id="configure-form" class="form-configure well" action="http://www.mirz.com/Chunk2/index2.html#" method="POST">
+
+<h4>Hour format</h4>
+<p><small>12-hour or 24-hour format.</small></p>
+<div class="btn-group" data-toggle="buttons">
+<label class="btn btn-primary ">
+<input type="radio" name="style" id="hourformat1" value="1"> 12-hour
+</label>
+<label class="btn btn-primary active">
+<input type="radio" name="style" id=" hourformat2" value="0"> 24-hour
+</label>
+</div>
+
+<hr>
+
+<div class="clearfix">
+<input class="btn btn-lg btn-primary btn-block" id="save" type="submit" value="Save">
+</div>
+
+</form>
+
+</div>
+
+<br>
+</div>
+
+<script>
+      var mHourFormat;
+      
+      $().ready(function () {
+
+        mHourFormat = parseInt(localStorage.getItem("hourformat"));
+		
+        if(isNaN(mHourFormat)) {
+          mHourFormat = 1;
+        }  
+		
+        if(mHourFormat) {
+          $('#hourformat1').prop('checked', true);
+          $('#hourformat1').parent().addClass('active');
+          
+          $('#hourformat2').prop('checked', false);
+          $('#hourformat2').parent().removeClass('active');
+        } 
+        else {
+          $('#hourformat1').prop('checked', false);
+          $('#hourformat1').parent().removeClass('active');
+          
+          $('#hourformat2').prop('checked', true);
+          $('#hourformat2').parent().addClass('active'); 
+        }
+
+      });
+
+      $("#configure-form").submit(function(e) {  
+
+        mHourFormat = $('#hourformat1').prop('checked') ? 1 : 0;
+
+        localStorage.setItem("hourformat", mHourFormat); 
+        
+        var j = {
+          hour_12 : parseInt(mHourFormat)
+        };
+        
+        window.location.href = "pebblejs://close#" + JSON.stringify(j);
+
+        e.preventDefault();
+      });
+  </script>
+
+</body></html>
