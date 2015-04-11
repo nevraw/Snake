@@ -20,31 +20,27 @@
 		<h1>Configure Snake</h1>
 	</header>
 		
-	<div id="info" class="bg-info" style="padding:0.75em">
-			<p>Only configuration option, currently, is selection of 12-hour mode. 
-			<br>Default is 24-hour mode.
-			</p>
-                <p></p>
-                <p></p>
+	<div id="info" class="bg-info" >
+		<p>Select option for time mode on Snake<br></p>
 		</div>
-	
-	<form id="config" role="form" class="input-lg">
-		<fieldset>
-			<legend>Change time display mode:</legend>
-			<div class="checkbox">
+
+	<form id="config" role="form" class="input-lg" style="padding:10px">
+		<fieldset style="padding:6px">
+			<legend>Time display mode</legend>
+			<div class="radio">
 			<label>
-				<input type="checkbox" name="hour_12" value="on">
-						12-hour mode
+				<input type="radio" name="hour_12" value="off" checked>24-hour mode
+				<input type="radio" name="hour_12" value="on">12-hour mode
 			</label>
 		</div>
   		</fieldset>
-                <p> </p>     
-	
-	<fieldset>
-		<a href="pebblejs://close" class="btn btn-lg btn-default" role="button">Cancel</a>
-			<button type="button" class="btn btn-lg btn-primary" id="b-submit">Save</button>
-	</fieldset>
-</form>
+                <p></p>     
+
+		<fieldset style="padding:6px">
+			<a href="pebblejs://close" class="btn btn-lg btn-default" role="button">Cancel</a>
+				<button type="button" class="btn btn-lg btn-primary" id="b-submit">Save</button>
+		</fieldset>
+	</form>
 
 	</div><!-- container -->
 
