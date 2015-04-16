@@ -135,7 +135,7 @@
 		}
 
 		$("#b-submit").click(function() {
-			var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+			var location = getQuery('return_to', 'pebblejs://close#') + encodeURIComponent(JSON.stringify(saveOptions()));
 			document.location = location;
 		});
 
