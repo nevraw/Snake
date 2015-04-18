@@ -41,13 +41,12 @@
 			<legend>Striped snake skin</legend>
 			<div class="radio">
 			<label>
-				<input type="radio" name="pattern" value="on" checked>Stripes
-				<input type="radio" name="pattern" value="off">No stripes
+				<input type="radio" name="skin_tone" value="on" checked>Stripes
+				<input type="radio" name="skin_tone" value="off">No stripes
 			</label>
 		</div>
   		</fieldset>
                 <br>
-    <p>The following 2 options have no effect on black and white screens (Pebble Original & Pebble Time)</p>
                 <br>
 		<fieldset style="padding:6px">
 			<legend>Background</legend>
@@ -55,16 +54,6 @@
 			<label>
 				<input type="radio" name="background" value="on" checked>Black
 				<input type="radio" name="background" value="off">Dark Grey
-			</label>
-		</div>
-  		</fieldset>
-                <br>
-		<fieldset style="padding:6px">
-			<legend>Snake skin colour</legend>
-			<div class="radio">
-			<label>
-				<input type="radio" name="skin" value="off" checked>Green
-				<input type="radio" name="skin" value="on">Brown
 			</label>
 		</div>
   		</fieldset>
@@ -92,9 +81,8 @@
 
 			var options = {
 				hour_12:	params.hour_12 === 'on',
-				pattern:	params.pattern === 'on',
-				background:	params.background === 'on',
-				skin:	params.skin === 'on'
+				skin_tone:	params.skin_tone === 'on',
+				background:	params.background === 'on'
 			}
 			return options;
 		}
@@ -105,14 +93,11 @@
 			if (opts && opts.hour_12) {
 				$form.find('[name="hour_12"]').prop('checked', true);
 			}
-			if (opts && opts.pattern) {
-				$form.find('[name="pattern"]').prop('checked', true);
+			if (opts && opts.skin_tone) {
+				$form.find('[name="skin_tone"]').prop('checked', true);
 			}
 			if (opts && opts.background) {
 				$form.find('[name="background"]').prop('checked', true);
-			}
-			if (opts && opts.skin) {
-				$form.find('[name="skin"]').prop('checked', true);
 			}
 		}
 
