@@ -47,7 +47,7 @@
 		</div>
   		</fieldset>
                 <br>
-    <p>The following option has no effect on Pebble Original & Pebble Time</p>
+		<p>The following option has no effect on Pebble Original & Pebble Time</p>
                 <br>
 		<fieldset style="padding:6px">
 			<legend>Background</legend>
@@ -120,9 +120,22 @@
 			}, 0);
 		}
 
+		// Something like this to get query variables.
+		function getQueryParam(variable, default_) {
+		    var query = location.search.substring(1);
+		    var vars = query.split('&');
+		    for (var i = 0; i < vars.length; i++) {
+		        var pair = vars[i].split('=');
+		        if (pair[0] == variable)
+		            return decodeURIComponent(pair[1]);
+		    }
+		    return default_ || false;
+		}
+
+
 		$("#b-submit").click(function() {
-			var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
-			document.location = location;
+			var return_to = getQueryParam('return_to', 'pebblejs://close#');
+			document.location = return_to + encodeURIComponent(JSON.stringify(saveOptions()));
 		});
 
 		var version = getParam('v');
