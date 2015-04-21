@@ -119,9 +119,10 @@
 		    }
 		    return default_ || false;
 		}
+		
 		$("#b-submit").click(function() {
-			var return_to = getQueryParam('return_to', 'pebblejs://close#');
-			document.location = return_to + encodeURIComponent(JSON.stringify(saveOptions()));
+			var location = getQueryParam('return_to', 'pebblejs://close#');
+			document.location = location + encodeURIComponent(JSON.stringify(saveOptions()));
 		});
 
 		var version = getParam('v');
