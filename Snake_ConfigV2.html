@@ -19,11 +19,11 @@
 	================================================== -->
 <div class="container">
 	<header>
-		<h1>Configure SnakeV2</h1>
+		<h1>Configure Snake (V2)</h1>
 	</header>
 	
 	<div id="info" class="bg-info"  style="padding:4px">
-   	<p>Configuration options for SnakeV2</p>
+   	<p>Configuration options for Snake</p>
 		</div>
 
 	<form id="config" role="form" class="input-lg" style="padding:10px">
@@ -70,8 +70,7 @@
 
 			var options = {
 				hour_12:	params.hour_12 === 'on',
-				skin_tone:	params.skin_tone === 'on',
-				background:	params.background === 'on'
+				skin_tone:	params.skin_tone === 'on'
 			}
 			return options;
 		}
@@ -84,9 +83,6 @@
 			}
 			if (opts && opts.skin_tone) {
 				$form.find('[name="skin_tone"]').prop('checked', true);
-			}
-			if (opts && opts.background) {
-				$form.find('[name="background"]').prop('checked', true);
 			}
 		}
 
